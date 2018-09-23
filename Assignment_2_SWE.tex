@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin = .5in}
+
+\title{Intro to Software Engineering: Assignment 2}
+\author{Harry Haisty}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item\textbf{Define the depth versus the breadth issue in software complexity}
+
+\begin{enumerate}
+\item  Breadth refers to the sheer numbers involving major functions, features within each functional area, interfaces to other external systems, simultaneous users, types of data, and data structures. 
+
+\item Depth addresses the linkage and the relationships among items. Sharing data, transfer of control, or both. 
+\end{enumerate}
+
+\item \textbf{Describe a way to simplify a complex problem}
+\newline 
+One way to simplify a complex problem is to "divide and conquer." You can divide and conquer a complex problem by addressing the problem in smaller segments. After dividing the problem into smaller segments, you can then decide how you want to begin to build your project. 
+\newline
+
+\item \textbf{List two technical concerns in developing large systems}
+\begin{enumerate}
+\item You need more than one person to develop software, and they might not know the same programming languages or have the same habits (using tabs vs using spaces, naming conventions, etc.)
+\item Your engineers would need to agree on technologies used, such as databases, middleware, networks, and others. 
+\end{enumerate}
+
+\item \textbf{What is the maximum number of communication paths for a team of twenty people?}
+\newline
+\(sum(n-1), n = 20\)
+\[sum(20-1) = sum(19) = 190 \ paths\ of \ communication\]
+
+\item \textbf{List four factors the should be considered in deciding how many postrelease people will be needed}
+\begin{enumerate}
+\item Number of expected users/customers
+\item Projected number of problems or bugs that will be discovered by users
+\item Amount of user training
+\item Number of problem fix releases and number of functional releases
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

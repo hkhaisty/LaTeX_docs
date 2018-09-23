@@ -1,0 +1,157 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin = .5in}
+
+\usepackage{graphicx}
+
+\title{Intro to Software Engineering: Assignment 4}
+\author{Harry Haisty}
+
+
+\begin{document}
+\maketitle
+\section*{Review Questions}
+\begin{enumerate}
+    \item \textbf{Discuss one advantage and one disadvantage of the waterfall process.}
+
+    \begin{itemize}
+        \item[-] \textit{Advantage:} ``The software process may be tracked as it moves sequentially through specific and identifiable stages" -- Pg. 60
+        \item[-] \textit{Disadvantage:} ``...limited interaction with users at only the requirement phase and the delivery of the software." --Pg. 61
+    \end{itemize}
+    
+    \item \textbf{What is the goal of a software process model?}
+ 
+    \newline
+    ``To provide guidance for systematically coordinating and controlling the tasks that must be performed in order to achieve the end product and the product objectives" -- Pg. 58
+    
+    \item \textbf{What are the four quadrants in a spiral model? Trace the requirements set of activities through each quadrant.}
+
+    \begin{enumerate}
+        \item Identify the objectives, alternatives, or constraints for each cycle of the spiral.
+        
+        \item Evaluate the alternatives relative to the objectives and constraints. In performing this step, many of the risks are identified and evaluated. 
+        
+        \item Depending on the amount of and type of identified risks, develop a prototype, more detailed evaluation, and evolutionary development, or some other step to further reduce the risk of achieving the identified objective. On the other hand, if the risk is substantially reduced, the next step may just be a task such as requirements, design, or code. 
+        
+        \item Validate the achievement of the objective and plan for the next cycle. 
+    \end{enumerate}
+    --Pg. 63
+  
+    \item \textbf{What are the entry and exit criteria to a process?}
+    
+    \begin{itemize}
+        \item \textbf{Entry: } 
+        \begin{itemize}
+            \item All specifications have been reviewed by the customers and other stakeholders.
+            \item All exceptions found during the review are changed. 
+            \item The modified specifications are accepted by all parties. 
+        \end{itemize}
+        -- Pg. 69
+        
+        \item \textbf{Exit: }
+        \begin{itemize}
+            \item All the artifacts are reviewed.
+            \item All or some prespecified percentage of the errors are corrected. 
+            \item People in the downstream activities have concurred and accepted the artifacts.
+        \end{itemize}
+        -- Pg. 70
+        
+    \end{itemize}
+    
+    \item \textbf{What motivated software engineers to move from the waterfall model to the incremental or spiral model?}
+    \newline
+    The incremental model accounts for issues such as scaling and risk containment, and it understands that larger projects might have to be further subdivided into smaller categories in order to be tackled by teams of developers. 
+    
+    -- Pg. 61
+    \newline
+    The spiral model addresses concerns with the waterfall's document-driven approach, and instead takes a risk reduction-driven approach towards developing software. 
+    
+    -- Pg. 63
+    
+    \item \textbf{What are the major concepts that drove the RUP framework?}
+    \begin{enumerate}
+        \item Use-case and requirements driven
+        \item Architecture centric
+        \item Iterative and incremental
+    \end{enumerate}
+    -- Pg. 65
+    
+    \item \textbf{What are the four phases of the RUP?}
+    \begin{enumerate}
+        \item Inception
+        \item Elaboration
+        \item Construction
+        \item Transition
+    \end{enumerate}
+    -- Pg. 66
+    
+    \item \textbf{List all of the key processes addressed by SEI's CMM model. Which ones are required for maturity level 2?}
+    \begin{itemize}
+        \item Organizational process focus
+        \item Organizational process definition
+        \item Organizational training
+        \item Organizational process performance
+        \item Organizational innovation and deployment
+        \item Project management
+        \item Project monitoring and control
+        \item Supplier agreement management
+        \item Integrated project management
+        \item Risk management
+        \item Integrating teaming
+        \item Integrated supplier management
+        \item Quantitative project management
+        \item Requirements development
+        \item Requirements management
+        \item Technical solution
+        \item Product integration
+        \item Verification
+        \item Validation 
+        \item Configuration management
+        \item Process and product quality assurance
+        \item Measurement and analysis
+        \item Organizational environment for integration
+        \item Decision analysis and resolution
+        \item Casual analysis and resolution
+    \end{itemize}
+    
+    \newpage
+    At Level 2:
+    \begin{itemize}
+        \item Requirements management
+        \item Software project tracking and oversight
+        \item Software quality assurance
+        \item Software project planning
+        \item Subcontract management
+        \item Software configuration management
+    \end{itemize}
+    
+    \item \textbf{How many process areas, in total, are included in SEI's Software CMMI? List those that fall into the engineering category and the support category.}
+    
+    25 process areas. 
+    \newline\newline
+    Engineering:
+    \begin{itemize}
+        \item Requirements development
+        \item Requirements management
+        \item Technical solution
+        \item Product integration
+        \item Verification
+        \item Validation
+    \end{itemize}
+    
+    Support: 
+    \begin{itemize}
+        \item Configuration management
+        \item Process and product quality assurance 
+        \item Measurement and analysis 
+    \end{itemize}
+
+\end{enumerate}
+
+\end{document}
