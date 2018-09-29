@@ -1,48 +1,89 @@
 \documentclass[11pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{listings}
-\usepackage{color}
-\usepackage{float}
-\usepackage{geometry}
-\geometry{a4paper}
-\geometry{margin = .5in}
-
-\usepackage{graphicx}
-
-\title{Intro to Software Engineering: Assignment 6}
-\author{Harry Haisty}
-
-\begin{document}
-\maketitle
-\section*{Review Questions}
-\begin{enumerate}
-\item List and describe at a high level the steps involved in the software requirements engineering process. 
-
-
-
-\item What are the three main items that must be planned prior to conducting requirements engineering?
-
-\item What are the six main dimensions of requirements that you need to address when collecting requirements?
-
-\item List four items that are included in the description of a high-level business profile
-
-\item List and describe three items that you will need to consider when prioritizing requirements.
-
-\item What is the viewpoint-oriented requirements definition method used for?
-
-\item Consider the situation where you have the following four requirements for an employee information system:
-\begin{itemize}
-    \item Response time for short queries must be less than 1 second. 
-    \item In defining an employee record, the user must be able to enter the employee name and be prompted for all the remaining employee attributes that are needed for the employee record. 
-    \item Employee information may be searched using either the employee number or the employee's last name. 
-    \item Only an authorized search (by the employee, managers in his or her chain of command, or human resource department personnel) will show employee salary, benefits, and family information. 
-\end{itemize}
-
-\item Explain in an ER diagram the relationship between programmers and modules where a programmer may write several modules and each module may also be written by several programmers.
-
-\item What are the four types of requirements traceability?
-
-\end{enumerate}
-
-\end{document}
+    \usepackage[utf8]{inputenc}
+    \usepackage{listings}
+    \usepackage{color}
+    \usepackage{float}
+    \usepackage{geometry}
+    \geometry{a4paper}
+    \geometry{margin = .5in}
+    
+    \usepackage{graphicx}
+    
+    \title{Intro to Software Engineering: Assignment 6}
+    \author{Harry Haisty}
+    
+    \begin{document}
+    \maketitle
+    \section*{Review Questions}
+    \begin{enumerate}
+    
+    \item List and describe at a high level the steps involved in the software requirements engineering process. 
+    
+    Requirements engineering are comprised of the following: 
+    \begin{itemize}
+        \item elicitation analysis definition
+        \item prototyping review specification
+        \item agreement or sign-off.
+    \end{itemize}
+    
+    \item What are the three main items that must be planned prior to conducting requirements engineering?
+    \begin{enumerate}
+        \item Requirements engineering needed
+        \item Resources needed
+        \item Schedule of activities and completion date of requirements engineering.
+    \end{enumerate}
+    
+    \item What are the six main dimensions of requirements that you need to address when collecting requirements?
+    \begin{enumerate}
+        \item business flow
+        \item data, formats, and information needs
+        \item individual functionality
+        \item system and other interfaces
+        \item user interfaces
+        \item constraints such as performance, security, quality, etc.
+    \end{enumerate}
+    
+    \item List four items that are included in the description of a high-level business profile
+    
+    \begin{enumerate}
+        \item Opportunity/needs
+        \item Justification
+        \item Scope
+        \item Major constraint
+    \end{enumerate}
+    
+    \item List and describe three items that you will need to consider when prioritizing requirements.
+    
+    \begin{itemize}
+        \item Current customer demands
+        \item Competition and current market condition
+        \item Immediate sales advantage
+    \end{itemize}
+    
+    \item What is the viewpoint-oriented requirements definition method used for?
+    
+    This method focuses on the fact that different stakeholders will view the requirements differently. This method analyzes all of the different viewpoints, and collects requirements from all sides.
+    
+    \item Consider the situation where you have the following four requirements for an employee information system:
+    \begin{itemize}
+        \item Response time for short queries must be less than 1 second. 
+        \item In defining an employee record, the user must be able to enter the employee name and be prompted for all the remaining employee attributes that are needed for the employee record. 
+        \item Employee information may be searched using either the employee number or the employee's last name. 
+        \item Only an authorized search (by the employee, managers in his or her chain of command, or human resource department personnel) will show employee salary, benefits, and family information. 
+    \end{itemize}
+    
+    \item Explain in an ER diagram the relationship between programmers and modules where a programmer may write several modules and each module may also be written by several programmers.
+    
+    \item What are the four types of requirements traceability?
+    \begin{itemize}
+        \item Backward \textit{from} traceablility: Links the requirement to the document source or the person who created it.
+        \item Forward \textit{from} traceability: Links the requirement to design an implementation.
+        \item Backward \textit{to} traceability: Links design and implementation back to the requirements.
+        \item Forward \textit{to} traceability: Links documents preceding the requirements to the requirements.
+    \end{itemize}
+    
+    \end{enumerate}
+    
+    \end{document}
+    
