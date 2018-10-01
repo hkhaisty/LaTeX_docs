@@ -39,52 +39,6 @@
 \maketitle
 \centerline{Codename: Cheese Puff}
 
-\section*{The Output}
-\begin{figure}[H]
-    \centering
-    \includegraphics{assignment_2_1}
-    \caption{Output for factorial recursion program}
-    \label{fig:part 1}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics{assignment_2_2}
-    \caption{Output for sum of integers program}
-    \label{fig:part 2}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics{assignment_2_3}
-    \caption{Output for Fibonacci sequence up to a value}
-    \label{fig:part 3}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics{assignment_2_4}
-    \caption{Output for evaluating truth of palindrome}
-    \label{fig:part 4}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics{assignment_2_5}
-    \caption{Output for printing strings backwards}
-    \label{fig:part 5}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics{assignment_2_B}
-    \caption{Output for calculating difference in runtime}
-    \label{fig:part 6}
-\end{figure}
-
-
-\section*{The Code}
-
 \subsection*{Computing Factorials with Recursive Functions}
 \begin{lstlisting}
 #include <iostream>
@@ -115,6 +69,16 @@ int main() {
     cout << factorial(user_input) << endl;
 }
 \end{lstlisting}
+\subsection*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_1}
+    \caption{Output for factorial recursion program}
+    \label{fig:part 1}
+\end{figure}
+
+\subsection{The Description}
+I made the data types long long because factorials grow to such large sizes that I kept running into trouble, even with regular long. The way that I calculate the factorial is the same way we learned to in class, with a recursive function call to the factorial method, all the while decrementing the arbitrary value "n" so that you are continually getting closer to 1. If you include 0, then your entire value will be 0, so it has to be to 1. I checked the value of my output against the scientific calculator on my computer.
 
 \subsection*{Computing Sums with Recursive Functions}
 \begin{lstlisting}
@@ -147,6 +111,17 @@ int main() {
     cout << sum(user_input);
 }
 \end{lstlisting}
+
+\subsection*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_2}
+    \caption{Output for sum of integers program}
+    \label{fig:part 2}
+\end{figure}
+
+\subsection*{The Description}
+This piece of code works similarly to the factorial method, in that it calls itself and it continuously decrementing until it reaches a small value. In this case, the value is 0. The value is 0 because we are calculating the sum, with addition, and will not invalidate our answers by including 0 in the operation. This method also needs to have a base case, otherwise it will invoke infinite recursion. 
 
 
 \subsection*{Calculating Fibonacci Sequence with Recursive Function}
@@ -192,6 +167,18 @@ int main() {
 }
 \end{lstlisting}
 
+\subsection*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_3}
+    \caption{Output for Fibonacci sequence up to a value}
+    \label{fig:part 3}
+\end{figure}
+
+\subsection*{The Description}
+This piece of code works a little differently than the last two because it requires that two separate values be incremented. It also requires that you hard-code the first couple of values, otherwise you will go out of bounds and never actually be able to calculate the \textit{nth} Fibonacci value.
+
+
 \subsection*{Evaluating Palindromes using Recursion}
 \begin{lstlisting}
 #include <iostream>
@@ -227,6 +214,17 @@ int main() {
 }
 \end{lstlisting}
 
+\subsection*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_4}
+    \caption{Output for evaluating truth of palindrome}
+    \label{fig:part 4}
+\end{figure}
+
+\subsection*{The Description}
+This piece of code begins by evaluating a string at its first and last indices. If the first and last indices are the same, then the first value increments and the last value decrements. If there any sort of disparity between the two values being evaluated, the code exits and the value is returned as false. If they are evaluated to be equal, then the value is returned as true. I wrote an if and an else statement so that the output wasn't just \textit{1} and \textit{0}. Now the user actually knows that \textit{their} word is or isn't a palindrome.
+
 \subsection*{Using Recursion to Print Strings Backwards}
 \begin{lstlisting}
 #include <iostream>
@@ -254,9 +252,18 @@ int main() {
     //print out the reverse of the string by calling recursive function
     cout << reverse_string(user_input, "", user_input.length()) << endl;
 }
-
-
 \end{lstlisting}
+
+\subsection*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_5}
+    \caption{Output for printing strings backwards}
+    \label{fig:part 5}
+\end{figure}
+
+\subsection*{The Description}
+This piece of code reverses the elements, sets "reverse" equal to a value, and then continually appends the reverse elements to the end of the string.
 
 
 \subsection*{Calculating Iterative Time vs. Recursive Time}
@@ -301,6 +308,18 @@ int main() {
 }
 
 \end{lstlisting}
+
+\subsection*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_B}
+    \caption{Output for calculating difference in runtime}
+    \label{fig:part 6}
+\end{figure}
+
+\subsection*{The Description}
+This one I couldn't figure out the whole way. Adding larger and larger numbers didn't affect the runtime, and I even created a custom ratio value so that I could get smaller and smaller increments of time. I ended up whittling it down to a picosecond, but the result still didn't show any difference.
+
 
 \section*{2.3 Trees}
 \begin{enumerate}
@@ -372,12 +391,31 @@ int main() {
 \end{enumerate}
 
 \section*{2.4 Binary Trees}
+
 \begin{enumerate}
-    \item For each of the following trees, determine whether or not the tree is a binary tree, a two-tree, full, and complete and give reasons for your determinations. If there is a subtree that \textbf{does} meet the criteria for the categories above, list the nodes of the subtree.
+    \item[a.] For each of the following trees, determine whether or not the tree is a binary tree, a two-tree, full, and complete and give reasons for your determinations. If there is a subtree that \textbf{does} meet the criteria for the categories above, list the nodes of the subtree.
     \begin{itemize}
-        \item i.  
+        \item i.  This tree is neither complete not full, there are nodes that only have one child, and the nodes are not as far left as possible.
         \item ii. This is a full tree because every node has exactly two or zero children.
+        \item iii. This tree is neither complete nor full, because many of the nodes have only one child and the nodes are not as far lest as possible.
+        \item iv. This is a complete tree because the nodes on the far left are completely full 
     \end{itemize}
+    \item[b.] For each tree state: the height, the number of nodes, the number of external nodes, and the number of internal nodes. 
+    \begin{enumerate}
+        \item[i. ] \textit{Height:} 3, \textit{\# of Nodes:} 11, \textit{\# of External Nodes:} 5, \textit{\# of Internal Nodes:} 6 
+        \item[ii. ] \textit{Height:} 3, \textit{\# of Nodes:} 9, \textit{\# of External Nodes:} 5, \textit{\# of Internal Nodes:} 4
+        \item[iii. ] \textit{Height:} 4, \textit{\# of Nodes:} 18, \textit{\# of External Nodes:} 8, \textit{\# of Internal Nodes:} 10
+        \item[iv. ] \textit{Height:} 4, \textit{\# of Nodes:} 14, \textit{\# of External Nodes:} 7, \textit{\# of Internal Nodes:} 7
+    \end{enumerate}
+     
+    \item[c.] For trees I and II perform a traversal of each of the following types: inorder, postorder, preorder, and level order.
+    \begin{enumerate}
+        \item[i. ] \textit{inorder:} 5, 4, 6, 10, 8, 11, 17, 19, 31, 43, 49, 11. \textit{postorder:}, 5, 10, 8, 4, 17, 31, 49, 43, 6, 19, 11. \textit{preorder:} 11, 6, 4, 5, 8, 10, 19, 17, 43, 31, 49. \textit{level order:} 11, 6, 19, 4, 8, 17, 43, 5, 10, 31, 49.
+        
+        \item[ii. ] \textit{inorder:} a, -, b, /, c, +, d, *, e. \textit{postorder:} e, d, *, c, b, /, a, -, +. \textit{preorder:} +, -, a, /, b, c, *, d, e.  \textit{level order:} +, -, *, a, /, d, e, b, c.
+    \end{enumerate}
+    
+    
     
 \end{enumerate}
 
@@ -428,6 +466,51 @@ int main() {
     \caption{Output for first fixed code}
     \label{fig:Part 2C}
 \end{figure}
+
+\subsection*{The Description}
+I changed the input type for this piece of code to strings and string arrays. This way I could potentially put an array of letters, symbols, or numbers in. The printArray method was working as expected, I just had to change the data type to match the string array. The first for loop in the original code worked as expected, it just wasn't returning the correct value. Instead, I decided to cout the output by iterating through a for loop that prints the individual indices of the string array. 
+
+\subsection*{}
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+//this code works as intended, so I made no modifications
+int* reverse(const int* list, int size)
+{
+    int* result = new int[size];
+    for (int i = 0, j = size - 1; i < size; i++, j--)
+    {
+        result[j] = list[i];
+    }
+    return result;
+}
+void printArray(const int* list, int size)
+{
+    for (int i = 0; i < size; i++)
+        cout << list[i] << " ";
+}
+int main()
+{
+    int list[] = {1, 2, 3, 4, 5, 6};
+    printArray(list, 6);
+    cout << endl;
+    int* p = reverse(list, 6);
+    printArray(p, 6);
+    cout << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{Assignmant_2_D}
+    \caption{This code works as intended}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection*{The Description}
+This code works just as intended. It takes in an array, and is able to print it forwards and backwards. 
 
 
 \end{document}
