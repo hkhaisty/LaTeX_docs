@@ -1,0 +1,433 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+\geometry{a4paper}
+\geometry{margin = .5in}
+
+\usepackage{graphicx}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numberstyle=\tiny\color{gray},
+  numbers=left, 
+  keywordstyle=\color{orange},
+  breaklines=true,
+  breakatwhitespace=true,
+  frame=tb, 
+  tabsize=4, 
+  commentstyle=\color{gray}, 
+  stringstyle=\color{dkgreen} 
+}
+
+\title{Data Structures: Assignment 2}
+\author{Harry Haisty}
+
+\begin{document}
+\maketitle
+\centerline{Codename: Cheese Puff}
+
+\section*{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_1}
+    \caption{Output for factorial recursion program}
+    \label{fig:part 1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_2}
+    \caption{Output for sum of integers program}
+    \label{fig:part 2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_3}
+    \caption{Output for Fibonacci sequence up to a value}
+    \label{fig:part 3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_4}
+    \caption{Output for evaluating truth of palindrome}
+    \label{fig:part 4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_5}
+    \caption{Output for printing strings backwards}
+    \label{fig:part 5}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{assignment_2_B}
+    \caption{Output for calculating difference in runtime}
+    \label{fig:part 6}
+\end{figure}
+
+
+\section*{The Code}
+
+\subsection*{Computing Factorials with Recursive Functions}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+//make the type long long to accomodate the large factorial values
+long long factorial(long long n) {
+    //the factorial value only goes to 1, if it were multiplied by 0 then the whole value would be 0
+    if (n > 1)
+        //recursively decrement the value of n and multiply
+        return n * factorial(n - 1);
+    else
+        //if the input value is 1 or less, return just the value "1"
+        return 1;
+}
+
+int main() {
+    //declare user input as type long long
+    long long user_input;
+
+    //prompt user to input value
+    cout << "Enter an integer: ";
+    //take in user input value
+    cin >> user_input;
+
+    //print out recursive call to factorial method
+    cout << factorial(user_input) << endl;
+}
+\end{lstlisting}
+
+\subsection*{Computing Sums with Recursive Functions}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+//works similarly to the factorial method
+int sum(int n) {
+    //n must be above 0, otherwise the loop will continue negatively forever
+    if (n > 0)
+        return n + sum(n - 1);
+
+        //if n is less than or equal to 0, return the value 0.
+        // if you return 1, then 1 will be added to the final sum value
+    else
+        return 0;
+}
+
+int main() {
+    //declare user input
+    int user_input = 0;
+
+    //prompt user input
+    cout << "Enter an integer: ";
+    //accept user input and initialize user input value
+    cin >> user_input;
+
+    //call recursive function with user input value
+    cout << sum(user_input);
+}
+\end{lstlisting}
+
+
+\subsection*{Calculating Fibonacci Sequence with Recursive Function}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int fibbonacci_sequence(int n) {
+
+    //declares and initializes num1 and num2 values to 0 and 1 so that program doesn't hang
+    int num1 = 0, num2 = 1;
+
+    //stops loop if n is smaller than threshold
+    if (n < 1)
+        return n;
+
+    //loops through to user input value
+    for (int i = 1; i < n; i++) {
+        //prints value
+        printf("%d", num2, " ");
+        //sets next to sum of first two integers, per the fibonacci sequence
+        int next = num1 + num2;
+        //sets smaller num1 to larger num2
+        num1 = num2;
+        //sets num2 to larger number
+        num2 = next;
+    }
+}
+
+int main() {
+
+    //declares integer N
+    int N;
+
+    //prompts user to set integer N to value
+    cout << "Enter an integer value: ";
+    //sets integer N to user value
+    cin >> N;
+
+    //prints out call to fibonacci sequence
+    cout << fibbonacci_sequence(N);
+}
+\end{lstlisting}
+
+\subsection*{Evaluating Palindromes using Recursion}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+//return boolean value to user to show if palindrome value is true or not
+bool is_palindrome(const string &str, int first_value, int last_value) {
+    //if first and last values left are equal, return true
+    if (first_value >= last_value)
+        return true;
+    //if the first and last values left are not equal, return false
+    if (str[first_value] != str[last_value])
+        return false;
+    //increment first value and decrement last value to evaluate against eachother
+    return is_palindrome(str, ++first_value, --last_value);
+}
+
+int main() {
+    //declare user input value
+    string user_string;
+
+    //prompt user to enter a string
+    cout << "enter a string: ";
+    //initialize user input value
+    cin >> user_string;
+
+    //print output based on returned value from recursive function
+    if (is_palindrome(user_string, 0, user_string.length() - 1) == 1)
+        cout << user_string << " is a palindrome.";
+    else
+        cout << user_string << " is not a palindrome";
+}
+\end{lstlisting}
+
+\subsection*{Using Recursion to Print Strings Backwards}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+string reverse_string(string input, string reverse, int n) {
+    //base case, return empty string
+    if (n == 0)
+        return "";
+
+    //reverse elements, append individual elements to new string
+    return reverse += input.back() + reverse_string(input.substr(0, n - 1), reverse, n - 1);
+}
+
+int main() {
+    //declare user input
+    string user_input;
+
+    //prompt user for input
+    cout << "Enter a string: ";
+    //accept user input
+    cin >> user_input;
+
+    //print out the reverse of the string by calling recursive function
+    cout << reverse_string(user_input, "", user_input.length()) << endl;
+}
+
+
+\end{lstlisting}
+
+
+\subsection*{Calculating Iterative Time vs. Recursive Time}
+\begin{lstlisting}
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+
+long sum;
+
+long iterative_sum(int n) {
+    for (int i = 0; i < n; ++i)
+        sum += i;
+}
+
+long recursive_sum(int n) {
+    if (n > 0)
+        n + recursive_sum(n - 1);
+}
+
+int main() {
+    int user_input = 0;
+    typedef std::ratio<1l, 1000000000000l> pico;
+
+    cout << "Enter an integer: ";
+    cin >> user_input;
+
+    auto start = chrono::steady_clock::now();
+    iterative_sum(user_input);
+    auto end = chrono::steady_clock::now();
+
+    chrono::duration<double, std::pico> elapsed_time = (end - start);
+    cout << elapsed_time.count() << " picoseconds" << endl;
+
+    start = chrono::steady_clock::now();
+    recursive_sum(user_input);
+    end = chrono::steady_clock::now();
+
+    chrono::duration<double, std::pico> elapsed_time_2 = (end - start);
+    cout << elapsed_time_2.count() << " picoseconds";
+}
+
+\end{lstlisting}
+
+\section*{2.3 Trees}
+\begin{enumerate}
+    \item List the leaves of the tree
+    \begin{itemize}
+        \item K, L, F, G, M, I, J
+    \end{itemize}
+    
+    \item List the internal nodes of the tree
+    \begin{itemize}
+        \item A, B, C, D, E, H
+    \end{itemize}
+    
+    \item List a subtree
+    \begin{itemize}
+        \item B, E, K, L
+    \end{itemize}
+    
+    \item Name a child and its parent node
+    \begin{itemize}
+        \item C: \textit{parent node}, F: \textit{child node}
+    \end{itemize}
+    
+    \item What is a branch?
+    \begin{itemize}
+        \item  a node that has child nodes
+    \end{itemize}
+    
+    \item Name sibling nodes
+    \begin{itemize}
+        \item C and D are sibling nodes because they come from the same parent node
+    \end{itemize}
+    
+    \item List all descendants of B
+    \begin{itemize}
+        \item E, K, L
+    \end{itemize}
+    
+    \item What is the path from A to J?
+    \begin{itemize}
+        \item A, D, J
+    \end{itemize}
+    
+    \item What is the root node?
+    \begin{itemize}
+        \item A is the root node
+    \end{itemize}
+    
+    \item What is the depth of H?
+    \begin{itemize}
+        \item The depth of H is 2
+    \end{itemize}
+    
+    \item What is the height of the tree?
+    \begin{itemize}
+        \item The height of the tree is 3
+    \end{itemize}
+    
+    \item List the external nodes
+    \begin{itemize}
+        \item K, L, F, G, M, I, J (same as the leaves)
+    \end{itemize}
+    
+    \item List the ancestors of G
+    \begin{itemize}
+        \item The ancestors of G are C and A
+    \end{itemize}
+    
+\end{enumerate}
+
+\section*{2.4 Binary Trees}
+\begin{enumerate}
+    \item For each of the following trees, determine whether or not the tree is a binary tree, a two-tree, full, and complete and give reasons for your determinations. If there is a subtree that \textbf{does} meet the criteria for the categories above, list the nodes of the subtree.
+    \begin{itemize}
+        \item i.  
+        \item ii. This is a full tree because every node has exactly two or zero children.
+    \end{itemize}
+    
+\end{enumerate}
+
+\section*{2.5 Fix the Code}
+\subsection*{The Code}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+//have this method changed to void, since we are printing within the method
+void reverse(string list[], int size) {
+    //hard-coded value persists from original code
+    string result[6];
+    //this for loop replaces each index value of result with the opposite value
+    for (int i = 0, j = size - 1; i < size; i++, j--)
+        result[j] = list[i];
+
+    //this for loop I wrote iterates through the array, printing each value followed by a space
+    for (int j = 0; j < 6; j++)
+        cout << result[j] << " ";
+}
+
+//changed the value type from int to string
+void printArray(string list[], int size) {
+    //this code still has its original functionality
+    for (int i = 0; i < size; i++)
+        cout << list[i] << " ";
+}
+
+int main() {
+    //changed list array types to string values instead of integers
+    //now this code works with not just numbers, but strings and characters too
+    //integer values can be parsed out of the array
+    string list[] = {"1", "2", "3", "4", "5", "6"};
+    printArray(list, 6);
+    cout << endl;
+    //regular method call instead of assigning value to p
+    reverse(list, 6);
+    cout << endl;
+}
+\end{lstlisting}
+
+\subsection{The Output}
+\begin{figure}[H]
+    \centering
+    \includegraphics{Assignmant_2_C}
+    \caption{Output for first fixed code}
+    \label{fig:Part 2C}
+\end{figure}
+
+
+\end{document}
