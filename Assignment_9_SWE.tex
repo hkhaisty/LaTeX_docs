@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin = .5in}
+
+\title{Intro to Software Engineering: Assignment 9}
+\author{Harry Haisty}
+\date{October 2018}
+
+\begin{document}
+\maketitle
+
+\section*{Review Questions}
+\begin{enumerate} 
+\item List and explain in your own words three characteristics of a good software implementation.
+\newline \newline
+A piece of code needs to be \textit{readable}, \textit{correct}, and \textit{easily maintained}. The code needs to be able to be read by other programmers by using consistent and clean variable names, you should make sure everything is correct the first time, and you should make sure that the structure can be maintained by people in the future.
+
+
+\item Briefly discuss the issues associated with naming variables and procedures in a program.
+\newline \newline
+If you do not pick good, consistent, and clear naming conventions, then people will not be able to read your code later. You also need to make sure that you give different concepts very different names so that they don't get confused.
+
+\item List the four phases of the debugging process
+\begin{enumerate}
+\item Stabilization/Reproduction
+\item Localization
+\item Correction
+\item Verification
+\end{enumerate}
+
+\item True or False: You should always optimize your code for performance. Why?
+\newline \newline
+You should always optimize your code for performance because when your program scales, it will be catastrophic if your code encounters a larger data set and the program hangs because it doesn't scale well. 
+
+\item List three ``bad smells'' signaling that your code should probably be refactored.
+\begin{enumerate}
+\item Duplicated code
+\item Large class
+\item Feature envy
+\end{enumerate}
+
+\item List and briefly explain three of the refactorings mentioned in this chapter.
+\begin{enumerate} 
+\item \textit{Extract Method:} When you take a block of code, put it into its own method, and then call the method instead.
+\item \textit{Move Method:} Moving an algorithm to a different class where it makes more sense.
+\item \textit{Extract Class:} A process that divides into two.
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}
