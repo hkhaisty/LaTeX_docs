@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin = .5in}
+
+\usepackage{graphicx}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{mauve},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{blue},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\title{Lab 6 Accompanying Document}
+\author{Harry Haisty}
+\date{September 2018}
+
+\begin{document}
+
+\maketitle
+
+\section*{Section 1}
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+
+template <typename GenericType>
+GenericType maxValue(const GenericType& value1, const GenericType& value2)
+{
+    if(value1 > value2)
+        return value1;
+    else
+        return value2;
+}
+
+double maxValue(const double& value1, const double& value2)
+{
+    if (value1 > value2)
+        return value1;
+    else
+        return value2;
+}
+
+int maxValue(const int& value1, const int& value2){
+    if (value1 > value2)
+        return  value1;
+    else
+        return value2;
+}
+
+int main() {
+    int i = 5, j = 6, k, z, y;
+    long l = 10, m = 5, n;
+    k = maxValue<double>(i, j);
+    z = maxValue(i, j);
+    y = maxValue<int>(i, j);
+    cout << k << endl;
+    cout << z << endl;
+    cout << y << endl;
+}
+\end{lstlisting}
+
+
+
+\end{document}
