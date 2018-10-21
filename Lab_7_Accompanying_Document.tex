@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{graphicx}
 \usepackage{float}
 \usepackage{geometry}
 \geometry{a4paper}
@@ -29,7 +30,7 @@
   tabsize=3
 }
 
-\title{Lab 6 Accompanying Document}
+\title{Lab 7  Accompanying Document}
 \author{Harry Haisty}
 \date{September 2018}
 
@@ -37,7 +38,7 @@
 
 \maketitle
 
-\section*{Section 1}
+\section*{The Code}
 \begin{lstlisting}
 #include <iostream>
 using namespace std;
@@ -78,6 +79,15 @@ int main() {
 }
 \end{lstlisting}
 
+\section*{The Explanation}
+The object of this assignment was to explore different ways for a programmer to implement and replace overload functions. Using a template of a generic type, I was able to limit my code to only a few lines where before there had to be different methods to account for each different data type. 
+The generic type template was able to take in a doubl, and int, or another value, and compare those two values taken in to see which one of the values was larger. 
 
+\section*{The Output}
+\begin{figure}[h]
+\centering
+\includegrpahics[width = 10cm]{_____}
+\caption {output for part 1}
+\end{figure}
 
 \end{document}
