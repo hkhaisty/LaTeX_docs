@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.20)  22 OCT 2018 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.20)  22 OCT 2018 14:59
 entering extended mode
-**./Assignment_9_SWE.tex
-(Assignment_9_SWE.tex
+**./Assignment_10_SWE.tex
+(Assignment_10_SWE.tex
 LaTeX2e <2018-04-01> patch level 5
 ("C:\Users\harri\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -111,8 +111,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks20
 
 ("C:\Users\harri\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
-cfg")) (Assignment_9_SWE.aux)
-\openout1 = `Assignment_9_SWE.aux'.
+cfg")) (Assignment_10_SWE.aux)
+\openout1 = `Assignment_10_SWE.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -183,43 +183,29 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 15.
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--22
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--39
-
- []
-
 [1
 
 {C:/Users/harri/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(Assignment_9_SWE.aux) ) 
+(Assignment_10_SWE.aux) ) 
 Here is how much of TeX's memory you used:
- 2682 strings out of 492973
- 38280 string characters out of 3126692
- 109897 words of memory out of 3000000
- 6574 multiletter control sequences out of 15000+200000
- 7926 words of font info for 28 fonts, out of 3000000 for 9000
+ 2684 strings out of 492973
+ 38314 string characters out of 3126692
+ 107898 words of memory out of 3000000
+ 6575 multiletter control sequences out of 15000+200000
+ 8234 words of font info for 29 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 26i,6n,32p,390b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/harri/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/harri/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/harri/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/harri/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Us
-ers/harri/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
-10.pfb>
-Output written on Assignment_9_SWE.pdf (1 page, 69037 bytes).
+ 26i,6n,32p,282b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/harri/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/harri/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/harri/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/harri/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Users/harri/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r17.pfb><C:/Users/harri/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmti10.pfb>
+Output written on Assignment_10_SWE.pdf (1 page, 73646 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 30 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
