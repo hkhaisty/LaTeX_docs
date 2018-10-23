@@ -1,0 +1,93 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 	
+%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+\hyphenation{im-pre-se}
+\begin{document}
+
+\pagestyle{empty} 
+
+\font\fb=''[cmr10]''
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Adam Gonglach
+	}\bigskip\par}
+	
+	\begin{center}
+	    Professional, self-starting programmer seeking an internship position.
+	    \end{center}
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Details
+\section{Personal Details}
+\begin{tabular}{rl}
+    \textsc{Phone:}     & (678) 739-1056\\
+    \textsc{E-mail:}     & \href{mailto:agonglach@comcast.net}{agonglach@comcast.net}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{December 2019} &\textbf{Kennesaw State University} Bachelor of Science, Kennesaw, GA\\
+&  Major: Computer Science\\
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+
+  \textsc{2016 -- 2017} &Draft Beer Services, Marietta, GA \\&\emph{Account Manager}\\&\footnotesize{Supervised sales and service accounts for over 160 locations in Georgia.}\\\multicolumn{2}{c}{} \\
+ 
+ \textsc{2014 -- 2016} &United Parcel Service, Roswell, GA \\&\emph{International Operations Supervisor}\\&\footnotesize{Responsible for managing and auditing teams processing international packages. Maintained knowledge of international law to ensure legal compliance with all shipments. Coordinated with top UPS accounts to verify all volume was handled efficiently.}\\\multicolumn{2}{c}{} \\
+ 
+\textsc{2008 -- 2012} & Target Electronics, Marietta, GA \\&\emph{Electronics Team Member}\\&\footnotesize{Performed analysis of sales using 4-week and quarterly reports; identified and promoted positive trends to increase per basket sales and profits.}\\\multicolumn{2}{c}{}\\
+
+\textsc{2012 -- 2016} & Target Logistics, Marietta, GA \\&\emph{Logistics Team Member}\\&\footnotesize{Responsible for daily in-store inventory management processes including in-store stock, trucking receivables, and distribution. Trained all new logistics team members to corporate standards.}\\\multicolumn{2}{c}{}\\
+\end{tabular}
+
+%Section: Languages
+\section{Proficient Technologies}
+\begin{tabular}{rl}
+\textsc{Programming Languages:}&C\#, C++, SQL, PHP, Java, Assembly\\
+\textsc{Operating Systems:}&Windows, MacOS\\
+\textsc{Development Processes:}&Agile Software Development\\
+\textsc{Development Environments:}&Microsoft Visual Studio, JetBrains Suite, JGrasp
+\end{tabular}
+
+\section{Professional Interests}
+Full-stack development, machine vision, security, database management, augmented reality \\
+
+\section{Extracurricular Activities}
+\textsc{Association for Computing Machinery} \\ 
+\textsc{Institute for Electrical and Electronics Engineering}
+
+
+\end{document}
