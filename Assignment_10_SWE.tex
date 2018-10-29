@@ -18,50 +18,28 @@
     \begin{document}
     \maketitle
     \begin{enumerate}
-        \item What are the two general characteristics of a good design that naturally evolve from requirements?
-        \newline
-        \textit{Completeness and consistency}
-        
-        \item What is the cyclomatic complexity of the design flow shown in Figure 8.4 where the diamond shapes represent decision branches and the rectangles are statements?
-        \newline
-        \textit{4}
-        
-        \item What are glue tokens and superglue tokens? Which contributes more to cohesion and why?
-        \newline
-        \textit{Glue tokens are the data tokens in a program that are located in more than one data slice. Superglue tokens are data tokens in a program that lie in every single slice of the program. Superglue tokens are more important to cohesion of a program because they are located throughout the entire program.}
-        
-        \item What are the levels of cohesion?
-        \newline
-        \textit{Coincidental, Logical, Temporal, Procedural, Communicational, Sequential, \& Functional}
-        
-        \item What are the levels of coupling?
-        \newline
-        \textit{Content, Common, Control, Stamp, \& Data}
-        
-        \item What are the six C-K metric for OO design?
-        \begin{itemize}
-            \item Weighted method per class
-            \item Depth of inheritance tree
-            \item Number of children
-            \item Response for a class
-            \item Coupling b/w objects
-            \item Lack of cohesion in methods
-        \end{itemize}
-        
-        \item What is a depth of inheritance tree (DIT) in C-K metrics, and why may a large DIT be bad for design?
-        \newline
-        \textit{The maximum length of inheritance from a given class to its root. A larger DIT means that there is more distance from the class to the root, giving more room for error.}
-        
-        \item In contrast to general design, what is of the most interest in UI design?
-        \newline
-        \textit{Consistency and ease of ability for the user to interact with the UI}
-        \item List four of the eight rules of interface design presented by Schneiderman and Plaisant.
+        \item Consider the diagram shown in \textit{Figure 10.8}
         \begin{enumerate}
-            \item Strive for consistency
-            \item Offer informative feedback
-            \item Reduce short-term memory
-            \item Permit easy reversal of action
+        \item How many logical paths are there? List them all? 
+        \item How many paths are required to cover all the statements?
+        \item How many paths are required to cover all the branches?
         \end{enumerate}
+        
+        \item In code inspection, what would you set as the condition (e.g, how many discovered defects) for reinspection?
+        
+        \item List the four techniques discussed to perform verification and validation.
+        
+        \item List two techniques you can use to perform validation -- that is, to ensure your program meets user requirements. 
+        
+        \item Briefly explain the concept of static analysis, and to which software products it can be applied.
+        
+        \item Consider the simple case of testing 2 variables, \textit{X} and \textit{Y}, where \textit{X} must be a non-negative number, and \textit{Y} must be aa number between -5 and +15. Utilizing boundary value analysis, list the test cases. 
+        
+        \item Describe the steps involved in a formal inspection process and the role of a moderator in this process.
+        
+        \item What is the difference between performance testing and stress testing?
+        
+        
     \end{enumerate}
     
     \end{document}
