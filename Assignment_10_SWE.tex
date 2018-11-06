@@ -6,11 +6,13 @@
     \usepackage{color}
     \usepackage{float}
     \usepackage{hyperref}
-    \usepackage{graphicx}
     \usepackage{geometry}
     \geometry{a4paper}
-    \geometry{margin = .5in}    
-
+    \geometry{margin = .5in}
+    \date{November 4th, 2018}
+    
+    \usepackage{graphicx}
+    
     \title{Intro to Software Engineering: Assignment 10}
     \author{Harry Haisty}
     
@@ -20,35 +22,94 @@
         \item Consider the diagram shown in \textit{Figure 10.8}
         \begin{enumerate}
         \item How many logical paths are there? List them all:
-        
-        \item How many paths are required to cover all the statements?
-        
-        \item How many paths are required to cover all the branches?
+        \begin{enumerate}
+            \item $c1 \rightarrow s1$
+            \item $c1 \rightarrow c2$
+            \item $c1 \rightarrow s1 \rightarrow c2$
+            \item $c1 \rightarrow s1 \rightarrow c2 \rightarrow s3$
         \end{enumerate}
         
-        \item In code inspection, what would you set as the condition (e.g, how many discovered defects) for reinspection?
+        \item How many paths are required to cover all the statements?
+        \begin{enumerate}
+            \item $c1 \rightarrow s1 \rightarrow c2 \rightarrow s3$
+        \end{enumerate}
+        
+        \item How many paths are required to cover all the branches?
+        \begin{enumerate}
+            \item $c1 \rightarrow c2 \rightarrow s3$
+            \item $c1 \rightarrow s1 \rightarrow c2 \rightarrow s3$
+        \end{enumerate}
+        
+        \end{enumerate}
+        
+        \item In code inspection, what would you set as the condition (e.g, how many discovered defects) for // reinspection?
+        \newline 
+       \textit{If the moderator deems that in the follow-up there are too many defects, they may call for a reinspection.}
         
         \item List the four techniques discussed to perform verification and validation.
+        \begin{itemize}
+            \item Testing
+            \item Inspections and reviews
+            \item Formal methods
+            \item Static analysis
+        \end{itemize}
         
         \item List two techniques you can use to perform validation -- that is, to ensure your program meets user requirements. 
+        \begin{itemize}
+            \item Acceptance Testing
+            \item UNIT Testing:
+            \begin{enumerate}
+                \item Black box
+                \item White box
+                \item Grey box
+            \end{enumerate}
+        \end{itemize}
         
         \item Briefly explain the concept of static analysis, and to which software products it can be applied.
+        \newline 
+       \textit{Static analysis analyzes the static structures of executable and non-executable files with the aim of detecting error-prone conditions. Static analysis can be applied to:}
+        \begin{itemize}
+            \item Intermediate documents
+            \item Structured documents
+            \item Source code
+            \item Executable files
+            \item FindBugs, a byte code checker for Java
+        \end{itemize}
         
-        \item Consider the simple case of testing 2 variables, \textit{X} and \textit{Y}, where \textit{X} must be a non-negative number, and \textit{Y} must be aa number between -5 and +15. Utilizing boundary value analysis, list the test cases. 
+        \item Consider the simple case of testing 2 variables, \textit{X} and \textit{Y}, where \textit{X} must be a non-negative number, and \textit{Y} must be a number between -5 and +15. Utilizing boundary value analysis, list the test cases. 
+        \begin{itemize}
+            \item Test Cases for \textit{Y}
+            \begin{enumerate}
+                \item An input data class with values above the limit.
+                \item An input data class with positive numbers between 0-15.
+                \item An input data class will be 0.
+                \item An input data class with negative numbers between -1 and -5.
+                \item An input data class with all values below the limit.
+            \end{enumerate}
+            \item Test Cases for \textit{X}
+            \begin{enumerate}
+                \item An input data class with all non-negative integers. 
+                \item An input data class with all values below the limit.
+                \item An input data class with all values above the limit.
+            \end{enumerate}
+        \end{itemize}
+        
         
         \item Describe the steps involved in a formal inspection process and the role of a moderator in this process.
         \begin{itemize}
-        \item \textit{Planning: } add some text here
-        \item \textit{Overview: } %Comment
-        \item \textit{Preparation: } %Comment
-        \item \textit{Examination: } %Comment
-        \item \textit{Rework: }
-        \item \textit{Follow-Up: } 
+        \item \textit{Planning: } a team and a moderator are selected and given the proper materials before the actual inspection meeting.
+        \item \textit{Overview: } a high-level overview of the work product is presented.
+        \item \textit{Preparation: } every member of the team is expected to study up before the actual work begins.
+        \item \textit{Examination: } an actual meeting is arranged where all the inspectors gather to review the product. The author is not allowed to read the work off to the team, so another reader is designated. People search for defects. 
+        \item \textit{Rework: } the author corrects all the defects found in the work. 
+        \item \textit{Follow-Up: } The corrections are checked by the moderator, and the corrected work is inspected again.
         \end{itemize}
         
         \item What is the difference between performance testing and stress testing? 
-        
-        
+       \begin{itemize}
+           \item Performance testing makes sure that the program behaves according to the program's specifications. 
+           \item Stress testing makes sure that the behaves correctly and degreades "gracefully' under stressful conditions. 
+       \end{itemize}
     \end{enumerate}
     
     \end{document}
