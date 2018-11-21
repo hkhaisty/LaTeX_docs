@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=.5in}
+
+\title{Intro to Software Engineering: Assignment 12}
+\author{Harry Haisty}
+\date{November 2018}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    %Question 1
+    \item List three customer support functions that a customer support/service organization performs.
+    \begin{itemize}
+        \item Phone Support: customers can speak directly to a representative, can also place orders, troubleshoot, and upsell.
+        \item Live Chat Support: anywhere, anytime solution, web-based approach.
+        \item Email Support: primary means of support, low cost, non-intrusive. 
+    \end{itemize}
+    
+    %Question 2
+    \item Explain the customer problem arrival curve in terms of customer usage of the product and the fixes.
+   %Answer
+   \item[] In the beginning, early users begin to ask questions and encounter problems with the product. The problem arrival rate increases quickly as more users begin to try the new software. In the beginning of the product release, most users encounter more obvious problems. As these problems are fixed, user sophistication increases and the rate of problem reporting decreases.
+    
+    %Question 3
+    \item What is the formula for usage month?
+    %Answer
+    \item[] Usage month = (Number of users using the software) * (Number of months of usage)
+    
+    %Question 4
+    \item What is a prerequisite/co-requisite relationship of product maintenance and fix releases?
+    %Answer
+    \item[] The maintenance releases must be timed to come out at the same time. The updates/fix maintenance of the software products must list each other as co-requisites in their respective documentation, which are shipped along with the code. 
+    %Question 5
+    \item What is a problem priority level? What is it used for?
+    %Answer
+    \item[] A problem priority level is a category assigned to incoming problems to determine the amount of time the developers/fix-and-delivery group should wait before releasing the fix for this particular problem. It is a scale from 1-4, with 1 meaning \textit{as soon as possible} and 4 meaning \textit{it'd be nice to have/change}.
+    
+    %Question 6
+    \item Describe the steps involved when a customer problem is passed from the customer service/support representative to the technical problem/fix analyst until the problem is resolved.
+    %Answer
+    \begin{itemize}
+        \item Problem description, problem priority, and related information is recorded in a problem report that is submitted to the problem-fix-and-delivery group.
+        \item The problem-fix-and-delivery group will explore and analyze the problem, including the reproduction of the problem.
+        \item The problem-fix-and-delivery group either accepts or rejects the problem.
+        \item If the problem is rejected, the direct customer support group is immediately notified; if the problem is accepted, then a change request is generated and the problem enters a fix cycle of design, code, and test.
+        \item Depending on the priority and nature of the problem, the fix may be individually packaged and released immediately to the customer or the fix may be integrated to a fix release package. 
+        \item The FAQ database is updated to reflect the status of all the problems so that the customer support/service representatives may quickly and accurately advise the customers on the problem resolution status.
+    \end{itemize}
+    
+    %Question 7
+    \item Give an example of a problem that may occur if a customer stays on a particular release, skips several maintenance/fix releases, and then applies a fix release.
+    %Answer
+    \item[] Retroactive application of the fix releases can be very time-consuming and frustrating to the customer.
+    
+    %Question 8
+    \item What is the estimated effort field on the change request form used for?
+    %Answer
+    \item[] The amount of work estimated is needed in order to allocate resources and schedule potential completion dates. The estimated effort field can be split into two fields, one for the preliminary estimation of work, and one for the actual work expended. This will help the company refine their estimations in the future.
+    
+\end{enumerate}
+
+\end{document}
