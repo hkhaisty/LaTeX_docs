@@ -1,0 +1,212 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin = .5in}
+
+\usepackage{graphicx}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{mauve},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{blue},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\title{Assignment 3 Accompanying Document}
+\author{Harry Haisty}
+\date{November 2018}
+
+\begin{document}
+
+\maketitle
+
+\section*{3.2}
+\begin{enumerate}
+    %%%%%%%%%%%
+    
+    \item[a.] 
+    \begin{lstlisting}
+sum = 0;
+for (int i = 0; i < n; i++)
+  for (int j = 0; j < n * n; j++)
+    sum++;
+    \end{lstlisting}
+    
+    \item[answer:] This code runs $n^2$ times.
+    %%%%%%%%%%%%
+    
+    \item[b.]
+    \begin{lstlisting}
+long fib (long index)
+{
+  if (index == 0)		// Base case
+    return 0;
+  else if (index == 1)		// Base case
+    return 1;
+  else				// Reduction and recursive calls
+    return fib (index b - 1) + fib (index b - 2);
+}
+    \end{lstlisting}
+    
+    %%%%%%%%%%%%%%
+    
+    \item[c.]
+    \begin{lstlisting}
+int gcd (int m, int n)
+{
+    if (m % n == 0)
+        return n;
+    else
+       return gcd (n, m % n);
+}
+    \end{lstlisting}
+    
+    %%%%%%%%%%%%%%%
+    
+    \item[d.]
+    \begin{lstlisting}
+sum = 0;
+for (int i = 0; i < n; i++)
+  for (int j = 0; j < i * i; j++)
+    for (int k = 0; k < j; k++)
+  sum++;
+    \end{lstlisting}
+    
+    \item[answer:] This code runs $n^5$ times.
+    
+    %%%%%%%%%%%%%%%%%%
+    
+    \item[e.]
+    \begin{lstlisting}
+sum = 0;
+for (int i = 1; i < n; i++)
+  for (int j = 1; j < i * i; j++)
+    if (j % i == 0)
+  for (k = 0; k < j; k++)
+    sum++;
+    \end{lstlisting}
+    
+    \item[answer:] This code runs $n^4$ times.
+    
+\end{enumerate}
+
+\section*{Section 3.4}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=7cm]{treepart1}
+    \caption{Original tree}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=7cm]{treepart2}
+    \caption{After 10 is added to tree}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=7cm]{treepart3}
+    \caption{After 15 is removed from tree}
+    \label{fig:my_label}
+\end{figure}
+
+
+\section*{Section 3.6}
+I used the \textbf{Merge Sort} algorithm to sort this data set.
+\begin{figure}
+    \centering
+    \includegraphics[width= 7cm]{mergesort}
+    \caption{My merge sort figure for the data set}
+    \label{fig:my_label}
+\end{figure}
+
+\section*{Section 3.7}
+
+\begin{enumerate}
+
+\item List all the paths from A to H 
+\begin{enumerate}
+    \item[] A, B, D, H
+    \item[] A, B, D, F, H
+    \item[] A, C, F, H
+    \item[] A, C, B, D, H
+    \item[] A, E, B, D, H
+    \item[] A, E, G, H
+\end{enumerate}
+
+\item which paths have the lowest weight?
+\begin{enumerate}
+    \item[] A, C, F, H
+    \item[] A, B, D, F, H
+    \item[] A, E, G, H
+\end{enumerate}
+These paths all have a weight of 31. 
+
+\item Which path has the shortest length?
+\begin{enumerate}
+    \item[] A, C, F, H
+    \item[] A, B, D, H
+    \item[] A, E, G, H
+\end{enumerate}
+These paths all are of length 4.
+
+\item Is the graph connected strongly or weakly? Explain. \newline 
+It is connected weakly because the paths only go one direction, which means that there is no connecting path between any two nodes.  
+
+\end{enumerate}
+
+\section*{Section 3.8}
+\begin{enumerate}
+    \item a breadth-first search \newline
+    A, B, C, D, E, F
+    
+    \item a depth-first search \newline
+    A, B, E, C, F, D
+    
+    \item make an adjacency list
+    
+    \item make an adjacency matrix
+    \begin{figure}
+        \centering
+        \includegraphics[width = 8cm]{adjacencymatrix}
+        \caption{Adjacency matrix for 3.8}
+        \label{fig:my_label}
+    \end{figure}
+    \item make an incidence matrix for this graph
+    
+    \item identify a cycle in the graph \newline
+    There is a cycle between vertices A, B, and C.
+    
+    \item Is the graph complete? Explain. \newline
+    This graph is not complete, there are not paths between each node.
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=6cm]{completegraph}
+        \caption{The red lines represent the missing paths in order to make this graph "complete"}
+        \label{fig:my_label}
+    \end{figure}
+\end{enumerate}
+
+
+\end{document}
