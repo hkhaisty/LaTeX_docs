@@ -259,6 +259,130 @@ It is connected weakly because the paths only go one direction, which means that
 I couldn't make it to either of the abstract writing workshops, but I was able to get in touch with the people in the Technical Communication department here at KSU. They gave me tons of really good writing tips, and helped me edit my abstract so that I could submit it. I have submitted it to NCUR, ACM, and IEEE. 
 
 \section*{Section 3.10}
+
+\subsection*{The Code}
+\begin{lstlisting}
+
+//methods.h
+using namespace std;
+
+class mixed_number_operations {
+
+public :
+    float regular_number, complex_number;
+
+    void printNumber() {
+        if (complex_number > 0) {
+            cout << regular_number << "+" << complex_number << "i";
+        } else {
+            cout << regular_number << "" << complex_number << "i";
+        }
+    }
+
+    void add_numbers(mixed_number_operations first, mixed_number_operations second) {
+        regular_number = first.regular_number + second.regular_number;
+        complex_number = first.complex_number + second.complex_number;
+        if (complex_number > 0) {
+            cout << regular_number << "+" << complex_number << "i";
+        } else {
+            cout << regular_number << "" << complex_number << "i";
+        }
+    }
+
+    void subtract_numbers(mixed_number_operations one, mixed_number_operations two) {
+        regular_number = one.regular_number - two.regular_number;
+        complex_number = one.complex_number - two.complex_number;
+        if (complex_number > 0) {
+            cout << setprecision(2);
+            cout << regular_number << "+" << complex_number << "i";
+        } else {
+            cout << setprecision(2);
+            cout << regular_number << complex_number << "i";
+        }
+    }
+
+    void multiply_numbers(mixed_number_operations one, mixed_number_operations two) {
+        regular_number = one.regular_number * two.regular_number;
+        complex_number = one.complex_number * two.complex_number;
+        if (complex_number > 0) {
+            cout << regular_number << "+" << complex_number << "i";
+        } else {
+            cout << regular_number << "" << complex_number << "i";
+        }
+    }
+
+    void divide_numbers(mixed_number_operations one, mixed_number_operations two) {
+        if (two.regular_number == 0 || two.complex_number == 0) {
+            cout << "Sorry division by 0 is not possible";
+        } else {
+            regular_number = one.regular_number / two.regular_number;
+            complex_number = one.complex_number / two.complex_number;
+            if (complex_number > 0) {
+                cout << regular_number << "+" << complex_number << "i";
+            } else {
+                cout << regular_number << "" << complex_number << "i";
+            }
+        }
+    }
+
+    void printing_results(mixed_number_operations first_value, mixed_number_operations second_value) {
+
+        cout << endl << "1. The FIRST complex number is: "; first_value.
+                printNumber();
+
+        cout << endl << "2. The SECOND complex number is: "; second_value.
+                printNumber();
+
+        cout << endl << "3. The SUM of the complex numbers is: ";
+                add_numbers(first_value, second_value);
+
+        cout << endl << "4. The MULTIPLICATION of the complex numbers is: ";
+                multiply_numbers(first_value, second_value);
+
+        cout << endl << "5. The SUBTRACTION of the complex number is: ";
+                subtract_numbers(first_value, second_value);
+
+        cout << endl << "6. The DIVISION of the complex numbers is: ";
+                divide_numbers(first_value, second_value);
+
+        cout << endl;
+    }
+};
+
+//main.cpp
+
+#include <iostream>
+#include <math.h>
+#include<iomanip>
+#include "methods.h"
+
+using namespace std;
+
+int main() {
+    mixed_number_operations first_input_value, second_input_value;
+
+    //prompts user to enter integer part of rational number
+    cout << "Enter integer part of first normal number: ";
+    cin >> first_input_value.regular_number;
+
+    //prompts user to enter integer part of complex number (minus i)
+    cout << "Enter integer value of complex number(*not* including the letter i): ";
+    cin >> first_input_value.complex_number;
+
+    //prompts user to enter integer part of second rational number
+    cout << "Enter integer part of second normal number: ";
+    cin >> second_input_value.regular_number;
+
+    //prompts uer to enter integer part of second complex number (minus i)
+    cout << "Enter integer part of second complex number (*not* including the letter i): ";
+    cin >> second_input_value.complex_number;
+
+    //calls printing method to display results of method calls.
+    first_input_value.printing_results(first_input_value, second_input_value);
+}
+
+\end{lstlisting}
+
 \begin{figure}
     \centering
     \includegraphics[width = 12cm]{310result}
