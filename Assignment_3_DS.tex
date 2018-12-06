@@ -128,6 +128,8 @@ for (int i = 1; i < n; i++)
 \end{enumerate}
 
 \section*{Section 3.4}
+I have included visuals of how I would go about appending and removing certain nodes from the tree. 
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=7cm]{treepart1}
@@ -150,24 +152,25 @@ for (int i = 1; i < n; i++)
 \end{figure}
 
 \section*{Section 3.5}
-\begin{figure}
+I would put D on the bottom of the tree, it is a larger element than A so it can't go all the way to the left, and it is a smaller element than E so it can go to the left of the element E. 
+\begin{figure}[h]
     \centering
-    \includegraphics[width = 11cm]{binarytreewithd}
+    \includegraphics[width = 7cm]{binarytreewithd}
     \caption{Binary tree with node D added}
     \label{fig:my_label}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width = 11cm]{rearrangetree}
+    \includegraphics[width = 7cm]{rearrangetree}
     \caption{Reordered binary tree}
     \label{fig:my_label}
 \end{figure}
 
-
+\newpage
 \section*{Section 3.6}
 I used the \textbf{Merge Sort} algorithm to sort this data set.
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width= 7cm]{mergesort}
     \caption{My merge sort figure for the data set}
@@ -220,49 +223,49 @@ It is connected weakly because the paths only go one direction, which means that
     \item make an adjacency list
     
     \item make an adjacency matrix
-    \begin{figure}
+    \begin{figure}[h]
         \centering
-        \includegraphics[width = 8cm]{adjacencymatrix}
+        \includegraphics[width = 7cm]{adjacencymatrix}
         \caption{Adjacency matrix for 3.8}
         \label{fig:my_label}
     \end{figure}
     \item make an incidence matrix for this graph
-    \begin{figure}
+    \begin{figure}[h]
         \centering
-        \includegraphics[width = 8cm]{incidencematrix}
+        \includegraphics[width = 5cm]{incidencematrix}
         \caption{Incidence matrix for this graph}
         \label{fig:my_label}
     \end{figure}
     
     \item identify a cycle in the graph \newline
-    There is a cycle between vertices A, B, and C.
+    \textit{There is a cycle between vertices A, B, and C.}
     
     \item Is the graph complete? Explain. \newline
-    This graph is not complete, there are not paths between each node.
+   \textit{ This graph is not complete, there are not paths between each node.}
     
-    \begin{figure}
+    \begin{figure}[h]
         \centering
-        \includegraphics[width=6cm]{completegraph}
+        \includegraphics[width=5cm]{completegraph}
         \caption{The red lines represent the missing paths in order to make this graph "complete"}
         \label{fig:my_label}
     \end{figure}
 \end{enumerate}
 
 \section*{Section 3.9}
-\begin{figure}
+I couldn't make it to either of the abstract writing workshops, but I was able to get in touch with the people in the Technical Communication department here at KSU. They gave me tons of really good writing tips, and helped me edit my abstract so that I could submit it. I have submitted it to NCUR, ACM, and IEEE. 
+
+\begin{figure}[h!]
     \centering
     \includegraphics[width = 11cm]{abstractsubmission}
     \caption{My 2019 NCUR abstract submission}
     \label{fig:my_label}
 \end{figure}
 
-I couldn't make it to either of the abstract writing workshops, but I was able to get in touch with the people in the Technical Communication department here at KSU. They gave me tons of really good writing tips, and helped me edit my abstract so that I could submit it. I have submitted it to NCUR, ACM, and IEEE. 
-
 \section*{Section 3.10}
+This one was interesting to write because it is different than a normal calculator, it is taking in values of complex numbers and passing them through different operations to display a result. I know that it is not standard practice to include actual logic in the header file of a program, but I thought it looked a little cleaner than having everything in the main method, and I wanted to practice modularization. I wrote all of this code in Clion, because it has very good debugging that I am familiar with by this point. 
 
 \subsection*{The Code}
 \begin{lstlisting}
-
 //methods.h
 using namespace std;
 
@@ -575,6 +578,9 @@ int main() {
 
 \section*{Section 3.12}
 
+\subsection*{The IDE}
+I wrote all of the comments for this code in Clion, I think it is the easiest way to quickly display results of a solution because it automatically builds for you and saves older builds so runtime is faster. 
+
 \subsection*{The Code}
 
 \begin{lstlisting}
@@ -689,9 +695,65 @@ int main()
 }
 \end{lstlisting}
 
-\section{Section 3.13}
+\section*{The IDE and the Rationale}
+For this particular problem, in the original array version I got a runtime of .03100 seconds, and for the modified, LinkedList version I got a runtime of 0.01500 seconds. After running the programs a few times I have determined that these are the general runtimes for my specific computer, but I am sure that the runtime would be different depending on the specs of another machine. 
+\newline \newline
+I used CLion for this project, although I originally programmed the LinkedList solution in Visual Studio. I find that Clion is a little simpler to use than Visual Studio, but I do enjoy running my programs in a separate console window in Visual Studio. The runtime was no different when I ran the LinkedList program in Visual Studio instead of my regular Clion, I assume this is because I was running it on the same machine. 
+
+
+\subsection*{The Code: Part 1}
 \begin{lstlisting}
 #include <iostream>
+#include <time.h>
+using namespace std;
+
+//set constant integer as sentinal value 1000
+static const int N = 1000;
+
+int main()
+{
+    //make clock
+    clock_t start = clock();
+    //initialize array
+    int i, a[N];
+
+    //loop through array starting with the 2nd element
+    for (i = 2; i < N; i++) a[i] = 1;
+
+    //loop through array
+    for (i = 2; i < N; i++)
+        if (a[i])
+            //set int j to int i value, multiply j by i until it reaches 1000, set element at i*j to 0
+            for (int j = i; j*i < N; j++) a[i*j] = 0;
+    //loop through populated array
+    for (i = 2; i < N; i++)
+        if (a[i]) cout << " " << i;
+
+    //stop clock
+    clock_t stop = clock();
+
+    //calculate time elapsed
+    double elapsed = (double)(stop-start) / CLOCKS_PER_SEC;
+
+    //print result of time
+    printf("\n\nTime elapsed: %.5f\n", elapsed);
+    cout << endl;
+}
+\end{lstlisting}
+
+\subsection*{The Output}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 10cm]{313Result}
+    \caption{Result and runtime for part 1}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection*{The Code: Part 2}
+
+\begin{lstlisting}
+#include <iostream>
+#include <time.h>
 
 using namespace std;
 
@@ -714,6 +776,8 @@ struct node {
 static const int N = 1000;
 
 int main() {
+    clock_t start = clock();
+
     int i;
     //address head of node with new node of val 0
     node *head(new node(0)), *current(head);
@@ -751,11 +815,33 @@ int main() {
         }
         current = current->next;
     }
+
+    clock_t stop = clock();
+
+    double elapsed = (double)(stop-start) / CLOCKS_PER_SEC;
+
+    printf("\n\nTime elapsed: %.5f\n", elapsed);
     cout << endl;
 }
 \end{lstlisting}
 
+\subsection*{The Output}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 10cm]{313Bresult}
+    \caption{Result and runtime for 313 part B}
+    \label{fig:my_label}
+\end{figure}
+
+\newpage
 \section*{Section 3.14}
+\subsection*{The IDE}
+I wrote the comments for this code in Clion, it has fewer cluttering widgets so I was able to see a larger portion of the screen when searching through this code. Plus, it has a setup that I am familiar with since I'm coming from a background of IntelliJ.
+
+\section*{The Summary}
+This code uses a generic template to manipulate contents of a list. The program implements functions such as push, remove, and splice to remove sections, splice lists, and merge different lists to form newer, larger lists. 
+
 \begin{lstlisting}
 #include <iostream>
 #include <list>
@@ -925,10 +1011,83 @@ int main() {
 }
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width = 10cm]{314Output}
     \caption{Output for code in 3.14}
+    \label{fig:my_label}
+\end{figure}
+
+\newpage
+\section*{Section 3.15}
+
+\subsection*{The Rationale}
+For this program, I programmed everything in Clion. The idea was to use an array instead of the node class, which proved challenging because arrays are difficult to change, unlike linkedlists. I ended up having to use methods stuch as swap to change the nodes in the array around without compromising the integrity of the array, and then only calling the head of the array at the end to display the value 8. 
+
+\subsection*{The Code}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i;
+    const int N = 9, M = 5;
+
+    //declare array of constant value 9
+    int nodes[N];
+
+    //populate array
+    for (i = 0; i < N; i++)
+    {
+        nodes[i] = i + 1;
+    }
+
+    //declare index as 8, and array size to be 9
+    int index = N - 1, arr_size = N;
+
+    //set conditional for while loop to hinge on array size
+    while (arr_size > 1)
+    {
+        //set conditional for for loop, iterate and compare index to array size
+        for (i = 1; i < M; i++)
+        {
+            index++;
+            if (index >= arr_size)
+            {
+                index = 0;
+            }
+        }
+
+        //declare and initialize start to index value + 1
+        int start = index + 1;
+        if (start == arr_size)
+        {
+            start = 0;
+        }
+
+        //set conditional for swapping ndoes
+        for (i = start; i < arr_size - 1; i++)
+        {
+            //invoke swap function for node at i and node at i+1
+            swap(nodes[i], nodes[i + 1]);
+        }
+
+        //decrement array size
+        arr_size -= 1;
+    }
+
+    //print head value of array
+    cout << nodes[0] << endl;
+}
+\end{lstlisting}
+
+\subsection*{The Output}
+\begin{figure}[h]
+    \centering
+    \includegraphics{315result}
+    \caption{Output for section 3.15}
     \label{fig:my_label}
 \end{figure}
 
