@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage[margin=1.0in]{geometry}
+
+\linespread{2.0}
+
+\title{Smalltalk Programming Language}
+\author{Harry Haisty}
+\date{March 2019}
+
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{4cm}
+ 
+       \textbf{Assignment 2: The History of Smalltalk}
+ 
+       \vspace{0.5cm}
+        CS 4308 -- Concepts of Programming Languages, Professor Sharon Perry
+
+       \vspace{.5cm}
+ 
+       \textbf{Harry Haisty}
+       \vfill
+ 
+       \vspace{0.8cm}
+ 
+   \end{center}
+\end{titlepage}
+
+\section*{Smalltalk at a Glance}
+Smalltalk is a family of object-oriented languages that commonly refers to Smalltalk-80. It is an example of an early, GUI-based language, but runs interpretation without the assistance of a user interface. It contains clickable menus that appear when user input is hilighted, and then compiles these hilighted selections, making it different than modern programming languages. It has been named the second-most loved programming language in the Stack Overflow Developer Survey in 2017. 
+\newline 
+Though Smalltalk-80 is not actively being worked on, there are several languages with similar characteristics that have garnered a loyal following and continue to undergo development. The last, stable version of Smalltalk was \textit{ANSI Smalltalk}, and was released in 1998. 
+
+\section*{The History of Smalltalk}
+The Smalltalk programming language first appeared 47 years ago in 1972, although development on the language began in 1969. It was developed at the Xerox Palo Alto Research Center by a small team of scientists after a bet was placed that a programming language based on \textit{message passing} could be implemented with only one page of code. It was created as an education programming language primarily by Alan Kay, Dan Ingalls, Adele Goldberg. Adele Goldberg wrote the majority of the documentation for the language, and Dan Ingalls implemented most of the early versions of the language.
+\newline
+The original Smalltalk-71 was based on the Simula brotherhood of programming languages, which are object-oriented programming languages developed in the 1960's.
+
+\section*{Circumstances Surrounding Smalltalk}
+While Smalltalk was created by the scientists at Xerox on a dare, it became no laughing matter. It was packed and shipped to some of the largest companies in the world and different universities for review and implementation. Some of the characteristics of the earlier versions of the language were taken out in favor of performance and class inheritance.
+
+\section*{What problem was being addressed?}
+While no specific problem was being addressed by the development of Smalltalk, it did bring about some revolutions in object-oriented programming. The \textit{Actor model}, which is an extension of object-oriented programming, came about in the later version, \textit{Smalltalk-72}, and is still used in research work even today. Actor models treat specified pieces of code as universal primitives of concurrent computation. Actors are powerful tools, because they can make modify their own states, make local decisions, send messages, and determine response to messages received. They are even able to affect other ``actors," but can only do so through messages.
+\newline
+The idea behind Smalltalk, and the reason that it continued and continues in variant development, was to create a programming language inspired by others at the time, but to implement wildly different features to make the language more accessible. The fact that the first version of Smalltalk was written in a few mornings by Alan Kay speaks to its simplicity, 
+
+\section*{Was the language widely accepted?}
+The language was widely accepted because of the simplicity of the language. Of the ``major" programming language, it has the least complicated structure. Due to its influences of some of the other major languages of the era, it was comfortable to use and familiar for programmers. However, the introduction of major players such as C++ and other, more modern OOP languages such as Java led Smalltalk to become more and more obsolete.
+\newline 
+\textbf{Below is an example of syntax in the Smalltalk programming language:}
+
+\begin{lstlisting}
+    | myButton |
+
+    myButton := Button new.
+    myButton label: 'press me'.
+    myButton action: [ myButton destroy ].
+    myButton open.
+
+\end{lstlisting}
+This code is  simple way of creating a button, labeling it with information to be displayed to the user, and assigning an action to the button. After the action is performed, the button is destroyed. It is a simple piece of code for a relatively complex, GUI-based artefact and action. This is a good example of how easy Smalltalk is and was to use.
+
+\section*{Examples of Language Success}
+Smalltalk is still used in commercial programming languages, but is mostly deprecated now. It exists in products such as \textit{Pharo Smalltalk}, \textit{GNU Smalltalk}, and \textit{Newspeak}. It is used commercially by Hong Kong-based logistics company Orient Oversears Container Lines (OOCL).
+\newline
+The investment bank and financial services company, JPMorgan, uses a variant of Smalltalk called \textit{Cincom Smalltalk} in their financial and risk management pricing system called \textit{Kapital}. ``JPMorgan estimates that developing and maintaining this system in any other language would require at least three times the amount of resources."
+\newline
+While Smalltalk is not the industry standard for professional development anymore, it was moderately successful as an educational language and in terms of inspiring innovation in newer, more modern programming languages. It is one of the earlier languages cited in the inspiration of Java and Ruby. It also led to the development of WYSIWYG (what you see is what you get) user interfaces, and was an integral part of the development of the modern Graphical User Interface. 
+\newline
+In the 1990's, Smalltalk was ranked the second-most popular object-oriented programming language after C++. In 1995, an article published by Alan Radding in the computing magazine \textit{Computerworld}, wrote an extensive cover on the functionality vs. usability of C++ and Smalltalk, citing Smalltalk as ``[getting a] bad rap" for its performance specs, citing that most people assumed that the language was still interpreted, as it was in the earlier versions of the language, and not compiled as it was in later versions. The performance of the earlier interpreted language meant users sacrificed power for usability, but once Smalltalk switched over to a compiled platform, Radding argues, you no longer sacrifice power.
+
+\input{bib.bib}
+\end{document}
+
+
+

@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[margins=.5in]{geometry}
+\usepackage[utf8]{inputenc}
+
+\title{Assignment 1 Algorithm Analysis}
+\author{Harry Haisty}
+\date{January 2019}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Question 1}
+The answer is 1
+
+\subsection*{Question 2}
+Euclid's algorithm is 2571.3 times faster.
+
+\subsection*{Question 3}
+It changes the places of the two numbers on the first pass.
+
+\subsection*{Question 4}
+a: $\sqrt{p(p-a)(p-b)(p-c)}$, where $p=(a+b+c)/2$
+
+\subsection*{Question 5}
+if a!= 0
+\newline
+D \leftarrow $ b*b-4*a*c$
+\newline \newline
+\textbf{if } D > 0
+\textit{temp} \leftarrow $2*a$
+$x1 \leftarrow 2 * a$
+\newline
+$x1 \leftarrow (-b + sqrt(D))/temp$
+\newline
+$x2 \leftarrow (-b- sqrt(D))/temp$
+\newline
+\newline
+\textbf{return} $x1, x2$
+\newline
+\textbf{else if } D = 0, \textbf{return} - b/(2 * a)
+\newline
+\textbf{else return} ``no real roots"
+\newline
+\textbf{else} //a = 0
+\newline
+\textbf{if} b!=0 \textbf{return} -c/b
+\newline
+\textbf{else} // a = b = 0
+\textbf{if} c = 0 \textbf{return} ``all real numbers"
+\newline
+\textbf{else return} ``no real roots"
+
+\subsection*{Question 6}
+$n = 15$
+
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[margins=.5in]{geometry}
+\usepackage[noend]{algpseudocode}
+\usepackage[utf8]{inputenc}
+
+\title{Algorithms Analysis Assignment 2}
+\author{Harry Haisty}
+\date{February 2019}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Question1}
+
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\State $dmin \gets infinity$
+\For {$\: i \gets 0 \: to\: n-2\:$} 
+\do{
+\For {$\: j \gets 0 \: to i+1 \: to \:  n-1$ \:} 
+\do{
+\State $temp \gets |A[i] - A[j]|$
+\If {$ \: temp < \: dmin$}
+\then{
+\State $dmin \gets temp$}
+
+\State \textbf{return} $\: dmin$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection*{Question 2}
+\begin{enumerate}
+    \item[a.] The output of this algorithm is \{14, 35, 47, 60, 81, 98\}
+    \item[b.] This algorithm is unstable. 
+    \item[c.] The algorithm is not on-place because it uses two additional arrays of size \textit{n.}
+\end{enumerate}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin = .5in}
+
+\usepackage{graphicx}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{mauve},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{blue},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\title{Lab 11 Accompanying Document}
+\author{Harry Haisty}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+This particular assignment I completed to the best of my ability. I used my understanding of stacks and heaps, but I was not able to make it all the way through the entire lab. I used CLion to write this code, but I didn't realize until much later that I had to manually change the version of Cmake so that I didn't have to keep deleting and restarting my project. I realize that this could be solved by writing the code in a solution file, but instead of doing that I wanted to keep it a regular .cpp file so that you could read it. 
+
+\section*{Introduction}
+
+\subsection*{Section 11B}
+\begin{lstlisting}
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void print_methods(vector<int> vector_1, int user_int) {
+    //call built-in make_heap function using beginning and end of vector
+    make_heap(vector_1.begin(), vector_1.end());
+    //call front value of heap and print
+    cout << "\n1. First max heap: " << vector_1.front() << "\n";
+
+    //pop front value of heap to get rid of old max value
+    pop_heap(vector_1.begin(), vector_1.end());
+    vector_1.pop_back();
+    cout << "\n2. Second max heap (after pop): " << vector_1.front() << "\n";
+
+    //prompt user to enter value to push onto heap
+    cout << "\n3. Enter a value to push onto heap: ";
+    cin >> user_int;
+    vector_1.push_back(user_int);
+    push_heap(vector_1.begin(), vector_1.end());
+
+    //print out new value after last push
+    cout << "\n4. New max heap after push: " << vector_1.front() << "\n";
+
+    //call sorting function for heap
+    sort_heap(vector_1.begin(), vector_1.end());
+    cout << "\n5. Final sorted heap: ";
+
+    //prints formatted list of sorted heap
+    for (unsigned i = 0; i < vector_1.size(); i++)
+        cout << ' ' << vector_1[i];
+
+    cout << '\n';
+}
+
+int main() {
+    int user_integer;
+    int array_size;
+
+    //accepts user input to make array size
+    cout << "Please indicate size of array: ";
+    cin >> array_size;
+
+    //declares and initializes array with user-defined size
+    int my_ints[array_size];
+
+    //loops through adding user values to array
+    for (int i = 0; i <= array_size; i++) {
+
+        //prompts user to enter integer value to populate array
+        cout << "Please enter integer value at place " << i << ":";
+        //accepts user integer
+        cin >> user_integer;
+        //places input at index in array
+        my_ints[i] = user_integer;
+    }
+
+    //declare and initialize int vector
+    std::vector<int> vector(my_ints, my_ints + 5);
+
+    //call print methods logic
+    print_methods(vector, user_integer);
+}
+
+\end{lstlisting}
+
+\end{document}
